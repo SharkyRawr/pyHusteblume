@@ -16,6 +16,6 @@ def api(method: str, url: str, data: dict = None, user=None) -> requests.Respons
         }
     pprint(headers)
     m = getattr(requests, method)
-    r = m(url, headers=HEADERS, data=data)
+    r = m(url, headers=headers, data=data)
     r.raise_for_status()
     return r
