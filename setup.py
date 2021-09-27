@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="husteblume",
-    version="0.0.2",
+    version="0.0.4",
     author="Sophie Luna Schumann",
     author_email="pypi@sophie.lgbt",
     description="Library to access the TK.de Husteblume API",
@@ -20,7 +20,7 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    packages=setuptools.find_packages(where="husteblume"),
+    packages=["husteblume"],
     python_requires=">=3.6",
     install_requires=[
           'requests',
