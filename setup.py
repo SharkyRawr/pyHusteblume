@@ -20,7 +20,7 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    package_dir={"": "husteblume"},
+    package_dir={"": "."},
     packages=setuptools.find_packages(where="husteblume"),
     python_requires=">=3.6",
     install_requires=[
