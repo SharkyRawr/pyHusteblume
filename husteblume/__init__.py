@@ -1,6 +1,6 @@
-import base64
-from pprint import pprint
+# Husteblume API
 
+import base64
 import requests
 
 HEADERS = {
@@ -14,7 +14,6 @@ def api(method: str, url: str, data: dict = None, user=None) -> requests.Respons
         headers = headers | {
             'authorization': 'Basic ' + (base64.b64encode(f"{user.appId}:{user.password}".encode('ascii'))).decode('ascii')
         }
-    pprint(headers)
     m = getattr(requests, method)
     r = m(url, headers=headers, data=data)
     r.raise_for_status()
