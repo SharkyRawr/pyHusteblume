@@ -8,13 +8,13 @@ HEADERS = {
 }
 
 
-def api(method: str, url: str, data: dict = None, user=None) -> requests.Response:
+def api(method: str, url: str, json: dict = None, user=None) -> requests.Response:
     headers = HEADERS
     if user:
         headers = headers | {
             'authorization': 'Basic ' + (base64.b64encode(f"{user.appId}:{user.password}".encode('ascii'))).decode('ascii')
         }
     m = getattr(requests, method)
-    r = m(url, headers=headers, data=data)
+    r = m(url, headers=headers, json=json)
     r.raise_for_status()
     return r
