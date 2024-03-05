@@ -26,7 +26,7 @@ class User(object):
         if password is None:
             password = ''.join(random.choice(string.ascii_letters) for i in range(26))
 
-        r = api('post', 'https://api.husteblume-app.de/users', data=dict(
+        r = api('post', 'https://api.husteblume-app.de/users', json=dict(
             age_group=age_group.value, birth_month=birth_month, gender=gender.value, pwd=password
         ))
 
